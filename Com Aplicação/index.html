@@ -90,9 +90,9 @@
   <script>
   // JOGO DA VELHA //
   // Variáveis do jogo //
-  let jogadorAtual = "X";
-  let tabuleiro = ["", "", "", "", "", "", "", "", ""];
-  const celulas = document.querySelectorAll('.celula');
+  let jogadorAtual = "X"; // Jogador que começa //
+  let tabuleiro = ["", "", "", "", "", "", "", "", ""]; // Estado do tabuleiro, vazio inicialmente //
+  const celulas = document.querySelectorAll('.celula'); // Seleciona todas as células do tabuleiro //
   const mensagem = document.getElementById('mensagem');
   const combinacoesVitoria = [
     [0,1,2], [3,4,5], [6,7,8], // linhas
@@ -117,17 +117,17 @@
     });
   });
 
-  function verificarVitoria() {
+  function verificarVitoria() { // Verifica se o jogador atual venceu //
     return combinacoesVitoria.some(combinacao => {
       return combinacao.every(i => tabuleiro[i] === jogadorAtual);
     });
   }
 
-  function jogoAcabou() {
+  function jogoAcabou() {  // Verifica se o jogo acabou //
     return verificarVitoria() || tabuleiro.every(c => c !== "");
   }
 
-  function reiniciarJogo() {
+  function reiniciarJogo() { // Reinicia o jogo //
     tabuleiro = ["", "", "", "", "", "", "", "", ""];
     jogadorAtual = "X";
     celulas.forEach(c => c.textContent = "");

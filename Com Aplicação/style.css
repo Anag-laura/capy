@@ -55,7 +55,7 @@ main {
 .content {
   display: none;
   background-color: #fff0fa;
-  padding: 30px;
+  padding: 20px;
   border-radius: 20px;
   max-width: 900px;
   margin: auto;
@@ -103,8 +103,8 @@ h2 {
 .tabuleiro {
   display: grid;
   grid-template-columns: repeat(3, 100px);
-  gap: 5px;
-  margin: 20px 0;
+  gap: 8px;
+  margin: 30px 0;
   justify-content: center;
   align-items: center;  
 }
@@ -125,7 +125,7 @@ h2 {
 
 /* EFEITO HOVER NAS CÉLULAS */
 .celula:hover {
-  background-color: #ddd;
+  background-color: #fffbfb;
 }
 
 .h3 {
