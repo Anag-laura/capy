@@ -1,0 +1,136 @@
+/* PARTE DO CORPO (BODY) */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #ffd6f1;
+  color: #000;
+  font-size: 18px;
+}
+
+/* LEITURA DO SITE */
+header {
+  background-color: #ff61c7; 
+  padding: 30px 20px;
+  text-align: center;
+  color: white;
+}
+
+CONTORNO DO MENU
+nav {
+  margin-top: 20px;
+}
+
+/* BOTÕES DO MENU */
+.nav-btn {
+  background-color: #ffb2f0;
+  border: none;
+  padding: 12px 24px;
+  margin: 5px;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  color: white;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+/* EFEITO HOUVER */
+.nav-btn:hover {
+  background-color: #ff87d8;
+}
+
+/* BOTÃO ""TRAVADO"" */
+.nav-btn.active {
+  background-color: white;
+  color: #ff61c7;
+}
+
+
+main {
+  padding: 40px;
+}
+
+
+/* PARTE SEPARADA */
+.content {
+  display: none;
+  background-color: #fff0fa;
+  padding: 30px;
+  border-radius: 20px;
+  max-width: 900px;
+  margin: auto;
+  line-height: 1.8;
+}
+
+/* ESTILO DA PARTE SEPARADA */
+.content.active {
+  display: block;
+}
+
+
+h2 {
+  color: #e45ab0;
+  font-size: 28px;
+}
+
+/* EFEITO RESPONSIVO */
+
+/* MEDIA QUERY */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 22px;
+  }
+
+/* BOTÕES DO MENU */
+  .nav-btn {
+    padding: 12px;
+    width: 100%;
+    margin: 6px 0;
+  }
+
+/* PARTE SEPARADA */
+  main {
+    padding: 20px;
+  }
+
+/* PARTE SEPARADA */
+  .content {
+    padding: 20px;
+    font-size: 16px;
+    }
+}
+/* ESTILO DO JOGO DA VELHA */
+.tabuleiro {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  gap: 5px;
+  margin: 20px 0;
+  justify-content: center;
+  align-items: center;  
+}
+
+/* ESTILO DAS CÉLULAS DO JOGO DA VELHA */
+.celula {
+  width: 100px;
+  height: 100px;
+  background-color: #f0f0f0;
+  font-size: 2rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: 2px solid #333;
+}
+
+/* EFEITO HOVER NAS CÉLULAS */
+.celula:hover {
+  background-color: #ddd;
+}
+
+.h3 {
+  text-align: center;
+  color: #e45ab0;
+  font-size: 24px;
+  margin-top: 20px;
+}

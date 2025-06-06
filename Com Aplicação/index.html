@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Capivaras - o site sobre capivaras</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Capivaras - o site sobre capivaras</h1>
+    <nav>
+      <!-- BOTÕES PARA SELEÇÃO DE PÁGINAS -->
+      <button class="nav-btn active">Início</button>
+      <button class="nav-btn">Informações</button>
+      <button class="nav-btn">Curiosidades</button>
+      <button class="nav-btn">Jogo</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="content active" id="inicio">
+      <h2>Bem-vindo ao site sobre capivaras!</h2>
+      <!-- TELA INICIAL -->
+      <p><strong>Essas porrinhas vão dominar o mundo!!!</strong></p>
+      <p>As capivaras são realmente criaturas incríveis e muito fofas. Elas são os maiores roedores do mundo e adoram viver em grupos, o que mostra o quanto são sociáveis e carinhosas. Com seu jeitinho tranquilo e olhar doce, elas parecem sempre estar em paz, curtindo a natureza ao seu redor. Além disso, suas peles macias e seu comportamento calmo fazem delas verdadeiros símbolos de serenidade e amizade na natureza. Não é difícil se apaixonar por essas criaturas tão adoráveis!</p>
+    </section>
+
+    <section class="content" id="informacoes">
+      <h2>Informações Gerais</h2>
+      <!-- LISTA DE INFORMAÇÕES GERAIS -->
+      <p><strong>As capivaras (Hydrochoerus hydrochaeris)</strong> são os maiores roedores do mundo, podendo atingir até 1,3 metro de comprimento e pesar cerca de 50 a 65 quilos. Elas são nativas da América do Sul, encontrando-se principalmente no Brasil, Argentina, Uruguai, Paraguai, e partes da Bolívia e Colômbia.</p>
+      <p>Elas vivem em ambientes próximos a corpos d'água, como rios, lagos, pântanos e áreas alagadas, pois gostam de estar em locais com bastante água para se refrescar, se proteger de predadores e facilitar a alimentação. São excelentes nadadoras e passam bastante tempo na água, onde se sentem seguras.</p>
+      <p>A alimentação das capivaras é herbívora, composta principalmente por gramíneas, plantas aquáticas, cascas de árvores e arbustos. Elas têm dentes que crescem continuamente, o que é importante para desgastar ao mastigar alimentos duros.</p>
+      <p>As capivaras são animais muito sociais, vivendo em grupos que podem variar de alguns indivíduos até mais de 20. Esses grupos geralmente incluem um macho dominante, várias fêmeas e seus filhotes. Elas se comunicam por meio de grunhidos, assobios e outros sons, além de usar linguagem corporal para interagir.</p>
+      <p>Elas têm uma pelagem grossa e resistente, que ajuda a protegê-las do frio e de arranhões. Apesar de serem dóceis, podem se assustar facilmente com barulhos ou movimentos bruscos, e é importante respeitar seu espaço na natureza.</p>
+      <p>As capivaras também têm um papel importante no ecossistema, ajudando na dispersão de sementes e na manutenção do equilíbrio ambiental. Além disso, são bastante populares entre as pessoas, muitas vezes vistas em parques e áreas urbanas próximas a rios e lagos.</p>
+    </section>
+
+    <section class="content" id="curiosidades">
+      <h2>Curiosidades</h2>
+      <!-- LISTA DE CURIOSIDADES -->
+      <ul>
+        <li><strong>Maior roedor do mundo:</strong> As capivaras são os maiores roedores do planeta, podendo chegar a 1,3 metro de comprimento e pesar até 65 quilos!</li>
+        <li><strong>Amigas da água:</strong> Elas adoram ambientes aquáticos e passam grande parte do tempo nadando, mergulhando e se refrescando. São excelentes nadadoras e podem ficar até cinco minutos debaixo d'água!</li>
+        <li><strong>Vida social:</strong> As capivaras vivem em grupos que variam de alguns indivíduos até mais de 20. Esses grupos têm uma hierarquia, com um macho dominante e várias fêmeas.</li>
+        <li><strong>Comunicação:</strong> Elas se comunicam por meio de grunhidos, assobios e outros sons, além de usar a linguagem corporal, com movimentos de cabeça e orelhas, para interagir com o grupo.</li>
+        <li><strong>Dentes que crescem continuamente:</strong> Seus dentes incisivos estão sempre crescendo, então elas precisam mastigar bastante para desgastá-los, o que fazem com as plantas que comem.</li>
+        <li><strong>Alimentação:</strong> São herbívoras e preferem gramíneas, plantas aquáticas, cascas de árvores e arbustos. Elas também se alimentam de sua própria urina para obter nutrientes adicionais, uma prática chamada de "reciclagem de nutrientes".</li>
+        <li><strong>Reprodução rápida:</strong> Uma fêmea pode ter até oito filhotes por gestação, e os filhotes nascem com pelos e olhos abertos, prontos para explorar o mundo logo após o nascimento.</li>
+      </ul>
+    </section>
+
+    <section class="content" id="jogo">
+      <h3>Jogo Da Velha</h3>
+      <!-- JOGO DA VELHA -->
+       <div id="tabuleiro" class="tabuleiro">
+        <div class="celula" data-index="0"></div>
+        <div class="celula" data-index="1"></div>
+        <div class="celula" data-index="2"></div>
+        <div class="celula" data-index="3"></div>
+        <div class="celula" data-index="4"></div>
+        <div class="celula" data-index="5"></div>
+        <div class="celula" data-index="6"></div>
+        <div class="celula" data-index="7"></div>
+        <div class="celula" data-index="8"></div>
+      </div>
+    <p id="mensagem"></p>
+    <button onclick="reiniciarJogo()">Reiniciar</button>
+    </section>
+  </main>
+ 
+
+  <script>
+    // MUDANÇA DE TELAS //
+    const buttons = document.querySelectorAll('.nav-btn');
+    const sections = document.querySelectorAll('.content');
+
+    // AÇÃO DE CLIQUE PARA MUDANÇA DE TELAS //
+    // UMA TELA DE CADA VEZ, SEM RECARREGAR A PÁGINA //
+    buttons.forEach((btn, index) => {
+      btn.addEventListener('click', () => {
+        buttons.forEach(b => b.classList.remove('active'));
+        sections.forEach(s => s.classList.remove('active'));
+        btn.classList.add('active');
+        sections[index].classList.add('active');
+      });
+    });
+  </script>
+
+  <script>
+  // JOGO DA VELHA //
+  // Variáveis do jogo //
+  let jogadorAtual = "X";
+  let tabuleiro = ["", "", "", "", "", "", "", "", ""];
+  const celulas = document.querySelectorAll('.celula');
+  const mensagem = document.getElementById('mensagem');
+  const combinacoesVitoria = [
+    [0,1,2], [3,4,5], [6,7,8], // linhas
+    [0,3,6], [1,4,7], [2,5,8], // colunas
+    [0,4,8], [2,4,6]           // diagonais
+  ];
+
+  celulas.forEach(celula => {
+    celula.addEventListener('click', () => {
+      const index = celula.dataset.index;
+      if (tabuleiro[index] === "" && !jogoAcabou()) {
+        tabuleiro[index] = jogadorAtual;
+        celula.textContent = jogadorAtual;
+        if (verificarVitoria()) {
+          mensagem.textContent = 'Jogador ' + jogadorAtual + ' venceu!';
+        } else if (tabuleiro.every(c => c !== "")) {
+          mensagem.textContent = "Empate!";
+        } else {
+          jogadorAtual = jogadorAtual === "X" ? "O" : "X";
+        }
+      }
+    });
+  });
+
+  function verificarVitoria() {
+    return combinacoesVitoria.some(combinacao => {
+      return combinacao.every(i => tabuleiro[i] === jogadorAtual);
+    });
+  }
+
+  function jogoAcabou() {
+    return verificarVitoria() || tabuleiro.every(c => c !== "");
+  }
+
+  function reiniciarJogo() {
+    tabuleiro = ["", "", "", "", "", "", "", "", ""];
+    jogadorAtual = "X";
+    celulas.forEach(c => c.textContent = "");
+    mensagem.textContent = "";
+  }
+</script>
+</body>
+</html>
